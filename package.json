@@ -1,0 +1,12 @@
+{
+  "name": "pdi-fullstack",
+  "version": "0.1.0",
+  "main": "src/main.ts",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
