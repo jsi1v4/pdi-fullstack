@@ -1,16 +1,11 @@
 import express from 'express';
+import routes from '@/routes';
 
-import router from '@/controllers';
+const server = express();
 
-function main() {
-  const app = express();
+server.use(express.json());
+server.use('/api', routes);
 
-  app.use(express.json());
-  app.use(router);
-
-  app.listen(3000, () => {
-    console.log("🚀 it's alive 🎉 (http://localhost:3000)");
-  });
-}
-
-main();
+server.listen(3000, () => {
+  console.log("🚀 it's alive 🎉 (http://localhost:3000)");
+});
