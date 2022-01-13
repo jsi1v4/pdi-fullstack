@@ -1,5 +1,5 @@
 {
-  "exec": "node -r tsconfig-paths/register -r ts-node/register src/main.ts",
+  "exec": "cross-env node -r tsconfig-paths/register -r ts-node/register src/server.ts",
   "watch": ["src/"],
   "ext": "js,ts,json"
 }
