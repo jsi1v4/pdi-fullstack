@@ -1,3 +1,5 @@
+import { bit } from '@/types';
+
 export interface User {
   id: number;
   first_name: string;
@@ -5,4 +7,5 @@ export interface User {
   email: string;
   gender: string;
   ip_address: string;
+  active: bit;
 }
