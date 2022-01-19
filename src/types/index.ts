@@ -7,3 +7,11 @@ export enum StatusCode {
   Forbidden = 403,
   MethodNotAllowed = 405,
 }
+
+export interface WithID {
+  id?: number;
+}
+
+export interface WithQuery {
+  q?: string;
+}
