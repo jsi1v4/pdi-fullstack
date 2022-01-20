@@ -1,15 +1,15 @@
 import knex from 'knex';
 
-import envs from '@/env';
+import env from '@/env';
 
 const db = knex({
   client: 'postgres',
   connection: {
-    host: envs.dbHost,
-    port: Number(envs.dbPort),
-    user: envs.dbUser,
-    password: String(envs.dbPassword),
-    database: envs.dbName,
+    host: env.dbHost,
+    port: Number(env.dbPort),
+    user: env.dbUser,
+    password: String(env.dbPassword),
+    database: env.dbName,
   },
 });
 

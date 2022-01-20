@@ -9,13 +9,14 @@
     "sourceMap": false,
     "resolveJsonModule": true,
     "noImplicitAny": false,
-    "types": ["node"],
+    "types": ["node", "jest"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "!/*": ["tests/*"]
     },
     "outDir": "dist/"
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "tests/**/*.ts"],
   "exclude": ["node_modules"]
 }

@@ -24,9 +24,9 @@ export const getUserById: Handler = async (req: Request<WithID>, res: Response) 
 export const createUser: Handler = async (req: Request<unknown, User>, res: Response) => {
   try {
     const user = withoutID()(req.body);
-    const created = await db<User>('users').insert(user).returning('*');
+    const data = await db<User>('users').insert(user).returning('*');
 
-    return res.status(StatusCode.Success).json({ created, message: 'success' });
+    return res.status(StatusCode.Success).json({ data, message: 'success' });
   } catch (error) {
     return res.status(StatusCode.Error).json({ error, message: 'error' });
   }
@@ -36,9 +36,9 @@ export const updateUser: Handler = async (req: Request<WithID, User>, res: Respo
   try {
     const id = requireID()(req.params);
     const user = withoutID()(req.body);
-    const updated = await db<User>('users').where({ id }).update(user).returning('*');
+    const data = await db<User>('users').where({ id }).update(user).returning('*');
 
-    return res.status(StatusCode.Success).json({ updated, message: 'success' });
+    return res.status(StatusCode.Success).json({ data, message: 'success' });
   } catch (error) {
     return res.status(StatusCode.Error).json({ error, message: 'error' });
   }
@@ -47,9 +47,9 @@ export const updateUser: Handler = async (req: Request<WithID, User>, res: Respo
 export const removeUser: Handler = async (req: Request<WithID>, res: Response) => {
   try {
     const id = requireID()(req.params);
-    const removed = await db<User>('users').where({ id }).update({ active: 0 }).returning('*');
+    const data = await db<User>('users').where({ id }).update({ active: 0 }).returning('*');
 
-    return res.status(StatusCode.Success).json({ removed, message: 'success' });
+    return res.status(StatusCode.Success).json({ data, message: 'success' });
   } catch (error) {
     return res.status(StatusCode.Error).json({ error, message: 'error' });
   }
